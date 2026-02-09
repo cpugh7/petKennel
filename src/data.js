@@ -1,14 +1,16 @@
-export const initialData = [
+const data = [
   {
     id: 1,
-    name: "Baby Yoda",
-    status: "Hungry",
-    image: "https://some-url.com/sad-yoda.jpg"
+    name: "Buddy",
+    image: "...",
+    adopted: false
   },
   {
     id: 2,
-    name: "Mandalorian",
-    status: "Lost",
-    image: "https://some-url.com/lost-mando.jpg"
+    name: "Luna",
+    image: "...",
+    adopted: false
   }
 ];
+
+export default data;

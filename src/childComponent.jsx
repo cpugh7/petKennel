@@ -1,27 +1,17 @@
-import React from 'react';
+const ChildComponent = ({ pet, toggleStatus }) => {
+  return (
+    <div>
+      <h2>{pet.name}</h2>
 
-// TODO: Destructure the props you need here (header, image, etc.)
-class ChildComponent extends React.Component {
+      <img src={pet.image} width="200" />
 
-  constructor(props) {
-   // todo add bindings etc to inititalize component and funcs 
-   super(props);
-  }
-  
-  render(){
-   return (
-    <div className="child-card">
-      {/* TODO: 
-        1. Add an <h2> for the header text 
-        2. Add an <img> tag for the image
-        3. Add a <p> tag for the content
-        4. Add a <button> that fires the click event
-      */}
-      
-      <button>Click Me</button>
+      <p>{pet.adopted ? "Adopted" : "Available"}</p>
+
+      <button onClick={() => toggleStatus(pet.id)}>
+        Change Status
+      </button>
     </div>
   );
- }
-}
+};
 
 export default ChildComponent;
