@@ -1,14 +1,19 @@
-const ChildComponent = ({ pet, toggleStatus }) => {
+const ChildComponent = ({ pet, toggleTreat }) => {
   return (
-    <div>
+    <div style={{ marginBottom: "30px" }}>
       <h2>{pet.name}</h2>
 
-      <img src={pet.image} width="200" />
+      <img
+        src={pet.image}
+        alt={pet.name}
+        width="220"
+        style={{ display: "block", marginBottom: "10px" }}
+      />
 
-      <p>{pet.adopted ? "Adopted" : "Available"}</p>
+      <p>{pet.hasTreat ? "Treat: YES" : "Treat: NO"}</p>
 
-      <button onClick={() => toggleStatus(pet.id)}>
-        Change Status
+      <button onClick={() => toggleTreat(pet.id)}>
+        {pet.hasTreat ? "NO treat" : "Give it a treat"}
       </button>
     </div>
   );

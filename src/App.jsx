@@ -7,12 +7,10 @@ class App extends Component {
     pets: data
   };
 
-  toggleStatus = (id) => {
+  toggleTreat = (id) => {
     this.setState({
       pets: this.state.pets.map((pet) =>
-        pet.id === id
-          ? { ...pet, adopted: !pet.adopted }
-          : pet
+        pet.id === id ? { ...pet, hasTreat: !pet.hasTreat } : pet
       )
     });
   };
@@ -26,7 +24,7 @@ class App extends Component {
           <ChildComponent
             key={pet.id}
             pet={pet}
-            toggleStatus={this.toggleStatus}
+            toggleTreat={this.toggleTreat}
           />
         ))}
       </div>
